@@ -1,0 +1,527 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header styling */
+header {
+  background: linear-gradient(90deg, #5a0542, #04064f);
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Center the Title */
+header h1 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px; /* Optional spacing between title and header container */
+}
+
+/* Global header button rule (applies to extra header buttons, if any) */
+header button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Override header button style for menu buttons */
+header .menu button {
+  position: static;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header .menu button:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+header .menu button a {
+  text-decoration: none;
+  color: inherit; /* inherit from button */
+  font-weight: bold;
+}
+
+
+/* Header container layout to position menu and theme toggle */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Menu on the left and toggle on the right */
+  align-items: center;
+  padding: 10px;
+}
+
+/* Navigation styling for nav elements */
+nav ul {
+  list-style: none;
+  background: #0ad6ec;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Updated Menu styling for header navigation */
+.menu {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* Align list to the left */
+  gap: 20px;
+}
+
+.menu__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu__link:hover {
+  color: #ff6600;
+}
+
+/* Main section styling */
+main {
+  padding: 1rem;
+}
+
+/* Destination grid layout */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* Destination card styling */
+.destination-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.destination-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.destination-card h3 {
+  margin: 0.5rem 0;
+}
+
+/* Rating stars styling */
+/* We're using flex with row-reverse for hover behavior.
+   'justify-content: flex-end' aligns the star group to the left visually */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.rating .star {
+  display: inline-block;
+}
+
+/* Highlight the hovered star and all following siblings (which appear to the left visually) */
+.rating .star:hover,
+.rating .star:hover ~ .star {
+  color: #ffac33;
+}
+
+.rating .star.active {
+  color: #ffac33;
+}
+
+/* Review form styling */
+.review-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.review-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.review-form button {
+  background: #083cd7;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+/* Dark mode styling */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode header {
+  background-color: #555;
+}
+
+body.dark-mode nav ul {
+  background: #444;
+}
+
+body.dark-mode footer {
+  background: #444;
+}
+
+/* Slider toggle styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #009879;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Dark mode toggle container styling */
+.theme-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Keeps the toggle on the right */
+  gap: 10px;
+  padding: 10px;
+}
+
+/* ----------------- Footer Base ------------------ */
+.footer {
+  position: relative;
+  background: #0a988c;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px 40px; /* Extra top padding for the waves */
+  overflow: hidden;
+}
+
+/* Ensure the footer content is layered on top */
+.footer-container {
+  position: relative;
+  z-index: 2;
+}
+/* Fix wave container */
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  z-index: 0; /* Lower than footer content */
+}
+
+/* Ensure each wave is clearly visible and smooth */
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: url('https://i.imgur.com/ZAts69f.png') repeat-x;
+  background-size: cover;
+  animation: wave-animation 8s linear infinite;
+  opacity: 0.6;
+  bottom: 0;
+}
+
+/* Layer waves with offsets and opacity */
+#wave1 {
+  z-index: 1;
+  opacity: 0.7;
+  animation-delay: 0s;
+  bottom: 0;
+}
+#wave2 {
+  z-index: 1;
+  opacity: 0.5;
+  animation-delay: -2s;
+  bottom: 5px;
+}
+#wave3 {
+  z-index: 1;
+  opacity: 0.3;
+  animation-delay: -4s;
+  bottom: 10px;
+}
+#wave4 {
+  z-index: 1;
+  opacity: 0.2;
+  animation-delay: -6s;
+  bottom: 15px;
+}
+
+/* Prevent wave overlap with footer content */
+.footer-container,
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ----------------- Trailer Button ------------------ */
+.trailer-button .btn {
+  background: #ff6600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  margin-bottom: 20px;
+}
+
+.trailer-button .btn a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.trailer-button .btn:hover {
+  background: #cc5200;
+  transform: scale(1.05);
+}
+
+/* ----------------- Inquiries Menu ------------------ */
+.inquiries h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+/* ----------------- Social Links ------------------ */
+.social-links {
+  margin-top: 20px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  gap: 15px;
+}
+
+.socials li a {
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.socials li a:hover {
+  color: #ff6600;
+}
+
+/* ----------------- Footer Bottom ------------------ */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Reviews Section */
+.review-container {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #232946;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Field */
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: #2C2C2C;
+  color: #ffffff;
+}
+
+/* Star Rating (alternate class, if used elsewhere) */
+.star-rating {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star:hover,
+.star.active {
+  color: #ffac33;
+}
+
+/* Reviews List */
+.review-item {
+  background: #fff;
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: -100px; /* pull up waves so they sit on footer */
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 300%;
+  height: 100px;
+  background: url("https://i.imgur.com/ZAts69f.png") repeat-x;
+  background-size: 1000px 100px;
+}
+
+#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite;
+}
+
+#wave3 {
+  z-index: 998;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+#wave4 {
+  z-index: 997;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+
+.footer-container,
+.footer-bottom {
+  position: relative;
+  z-index: 10;
+}
+

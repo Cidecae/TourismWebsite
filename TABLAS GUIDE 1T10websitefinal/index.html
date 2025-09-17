@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Odio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>LANDER'S GUIDE</h1>
+    <div class="header-container">
+
+      <nav class="menu">
+  <button><a class="menu__link" href="index.html">Home</a></button>
+  <button><a class="menu__link" href="aboutus.html">About Us</a></button>
+</nav>
+
+      <div class="theme-container">
+        <span class="mode-label">Light Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">Dark Mode</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Mainit Falls Section -->
+    <section id="mainit-falls">
+      <h2>Mainit Falls- Located in Brgy. Poctoy, Odiongan, Tablas Island Romblon</h2>
+      <div class="destination-grid">
+        <article class="destination-card">
+          <img src="Images/R (8).jpg" alt="Mainit Falls">
+          <h3>Mainit Falls </h3>
+          <!-- Note: Stars are now listed in descending order -->
+          <div class="rating" data-rating="0">
+            <span class="star" data-value="5">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="1">&#9733;</span>
+          </div>
+          <form class="review-form">
+            <label for="comment-1">Your Review:</label>
+            <textarea id="comment-1" name="comment" rows="3" placeholder="Write your review here"></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- Kawa Kawa Falls Section -->
+    <section id="kawa-kawa-falls">
+      <h2>Kawa Kawa Falls- Brgy. Doña Juana, San Agustin, Tablas Island, Romblon.</h2>
+      <div class="destination-grid">
+        <article class="destination-card">
+          <img src="Images/jay_kawa_kawa_falls.jpg" alt="Kawa Kawa Falls">
+          <h3>Kawa Kawa Falls </h3>
+          <div class="rating" data-rating="0">
+            <span class="star" data-value="5">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="1">&#9733;</span>
+          </div>
+          <form class="review-form">
+            <label for="comment-2">Your Review:</label>
+            <textarea id="comment-2" name="comment" rows="3" placeholder="Write your review here"></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Linao ni Vecto Falls Section -->
+    <section id="linao-ni-vecto-falls">
+      <h2>Linao ni Vecto Falls- Linao Ni Vecto Falls can be found between Odiongan and San Andres.</h2>
+      <div class="destination-grid">
+        <article class="destination-card">
+          <img src="Images/linao-ni-vecto-falls-tablas-14-800x534.jpg" alt="Linao ni Vecto Falls">
+          <h3>Linao ni Vecto Falls </h3>
+          <div class="rating" data-rating="0">
+            <span class="star" data-value="5">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="1">&#9733;</span>
+          </div>
+          <form class="review-form">
+            <label for="comment-3">Your Review:</label>
+            <textarea id="comment-3" name="comment" rows="3" placeholder="Write your review here"></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+        </article>
+      </div>
+    </section>
+    
+    <!-- All Reviews Section -->
+    <h3>All Reviews</h3>
+    <div id="reviews-list"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container2">
+      <div class="row">
+        <div class="column-66">
+          <div class="container3">
+            <button class="btn rounded">
+         <a href="https://youtu.be/PNLeJCzLQEY?si=UdB4Qa3kDcbO8hun">
+      <span class="text-rgb">MORE</span>
+    </a>
+  </button>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+
+    <div class="footer-container">
+      <h3>For inquiries</h3>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/HomeLanderJay/"> Facebook<i class="fa-brands fa-facebook-square"></i></a></li>
+        <li><a href="https://www.instagram.com/home_lander38/">Instagram<i class="fa-brands fa-tiktok"></i></a></li>
+        <li><a href="https://github.com/Cidecae">Github<i class="fa-brands fa-youtube"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 LANDER'S GUIDE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link the external JavaScript file -->
+  <script src="main.js"></script>
+</body>
+</html>
